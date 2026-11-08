@@ -19,7 +19,7 @@ const CD_STEP_PX = 170;        // Width of one album cover (150px) + gap (20px)
 // Global state variables
 let currentRotation = 0;       // Current boombox rotation in degrees
 let isDragging = false;        // Pointer is currently down and dragging
-let isTransitioning = false;   // Zoom-in site transition is active
+let isTransitioning = false;   // CD waterfall site transition is active
 let pointerStartX = 0;
 let pointerStartY = 0;
 let pointerStartTime = 0;
@@ -37,6 +37,13 @@ const boomboxBtn = document.getElementById('landing-boombox-btn');
 const landingHint = document.getElementById('landing-hint');
 const landingTitle = document.querySelector('.landing-title');
 const mainHeading = document.getElementById('main-heading');
+
+// CD waterfall transition settings
+const CD_IMAGE_SRC = 'cd.png';  // CD picture that falls during the transition
+const CD_COUNT = 110;           // How many CDs fall
+const CD_SWAP_MS = 1300;        // When the page switches (while CDs are falling)
+const CD_END_MS = 3300;         // When the CD layer is removed (after the last CD has fallen)
+new Image().src = CD_IMAGE_SRC; // Preload so the first CDs don't pop in late
 
 // Notepad elements
 const notepadWindow = document.getElementById('notepad-window');
@@ -222,7 +229,7 @@ function onBoomboxKeyDown(e) {
 // ---------------------------------------------------------------------
 
 /**
- * Zooms into the boombox and reveals the main profile page
+ * Pours a waterfall of CDs down the screen and reveals the main profile page
  */
 function enterSite() {
   if (isTransitioning) return;
@@ -248,36 +255,87 @@ function enterSite() {
     return;
   }
 
-  // FULL MOTION:
-  // 1. Quickly fade out landing title and hint (~200ms)
+  // FULL MOTION: a waterfall of CDs pours down the screen
+  // 1. Quickly fade out landing title and hint
   if (landingTitle) landingTitle.style.opacity = '0';
   if (landingHint) landingHint.style.opacity = '0';
 
-  // 2. Calculate nearest upright rotation (multiple of 360) so it finishes upright
-  const uprightRotation = Math.round(currentRotation / 360) * 360;
+  // 2. Release the CDs
+  launchCdWaterfall();
 
-  // 3. Compute scale required to fill the entire viewport
-  const rect = boomboxBtn.getBoundingClientRect();
-  const widthRatio = window.innerWidth / (rect.width || 400);
-  const heightRatio = window.innerHeight / (rect.height || 400);
-  const targetScale = Math.max(widthRatio, heightRatio) * 2.5;
-
-  // 4. Animate boombox zoom and rotation
-  boomboxBtn.style.transition = `transform ${ZOOM_MS}ms cubic-bezier(0.77, 0, 0.175, 1)`;
-  boomboxBtn.style.transform = `rotate(${uprightRotation}deg) scale(${targetScale})`;
-
-  // 5. At ~70% of zoom (700ms), cross-fade the overlay
+  // 3. Just before the screen is full of CDs, fade the aqua overlay in to hide the page swap
   setTimeout(() => {
     transitionOverlay.classList.add('active');
-  }, Math.round(ZOOM_MS * 0.7));
+  }, CD_SWAP_MS - 300);
 
-  // 6. At 100% of zoom (1000ms), switch pages and restore focus
+  // 4. Switch pages while the CDs keep falling, then fade the overlay out to reveal the main page
   setTimeout(() => {
     completeTransition();
     setTimeout(() => {
       transitionOverlay.classList.remove('active');
     }, 80);
-  }, ZOOM_MS);
+  }, CD_SWAP_MS);
+}
+
+/**
+ * Creates a layer of CD images that fall from the top of the screen like a waterfall.
+ * CHANGE ME: tweak CD_COUNT / CD_SWAP_MS / CD_END_MS at the top of this section.
+ */
+function launchCdWaterfall() {
+  const layer = document.createElement('div');
+  layer.setAttribute('aria-hidden', 'true');
+  Object.assign(layer.style, {
+    position: 'fixed',
+    inset: '0',
+    overflow: 'hidden',
+    pointerEvents: 'none',
+    zIndex: '10001'
+  });
+
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const baseSize = Math.max(64, Math.min(vw / 9, 150));
+
+  for (let i = 0; i < CD_COUNT; i++) {
+    const size = baseSize * (0.6 + Math.random() * 0.8);
+    // Spread the CDs evenly across the width so the "waterfall" has no big gaps
+    const x = ((i + Math.random()) / CD_COUNT) * vw - size / 2;
+    const delay = Math.pow(Math.random(), 1.2) * 1500;
+    const duration = 1000 + Math.random() * 600;
+    const spin = (Math.random() < 0.5 ? -1 : 1) * (180 + Math.random() * 540);
+    const drift = (Math.random() - 0.5) * 60;
+
+    const img = document.createElement('img');
+    img.src = CD_IMAGE_SRC;
+    img.alt = '';
+    img.draggable = false;
+    Object.assign(img.style, {
+      position: 'absolute',
+      left: x + 'px',
+      top: '0',
+      width: size + 'px',
+      height: 'auto',
+      willChange: 'transform'
+    });
+
+    img.animate(
+      [
+        { transform: `translate3d(0, ${-size - 20}px, 0) rotate(0deg)` },
+        { transform: `translate3d(${drift}px, ${vh + 20}px, 0) rotate(${spin}deg)` }
+      ],
+      {
+        duration,
+        delay,
+        easing: 'cubic-bezier(0.45, 0.05, 0.9, 0.7)', // speeds up like gravity
+        fill: 'both'
+      }
+    );
+
+    layer.appendChild(img);
+  }
+
+  document.body.appendChild(layer);
+  setTimeout(() => layer.remove(), CD_END_MS);
 }
 
 /**
@@ -384,6 +442,19 @@ function initCdRack() {
   const rackItems = document.querySelectorAll('.cd-rack-item');
   const boomboxCurrentCover = document.getElementById('boombox-current-cover');
   const currentDiscTitle = document.getElementById('current-disc-title');
+
+  // If an album cover image is missing, show the CD picture instead of a broken image
+  rackItems.forEach(item => {
+    const cover = item.querySelector('.rack-cover');
+    if (!cover) return;
+    const useFallback = () => {
+      if (cover.getAttribute('src') === CD_IMAGE_SRC) return;
+      cover.src = CD_IMAGE_SRC;
+      item.setAttribute('data-cover', CD_IMAGE_SRC);
+    };
+    cover.addEventListener('error', useFallback);
+    if (cover.complete && cover.naturalWidth === 0) useFallback();
+  });
 
   rackItems.forEach(item => {
     item.addEventListener('click', () => {
@@ -551,4 +622,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 4. Initialize Interactive Sparkles
   initSparkles();
+
+  // 5. Skip the landing screen when returning from another page (index.html#home)
+  if (location.hash === '#home' && landingScreen && mainPage) {
+    completeTransition();
+  }
 });

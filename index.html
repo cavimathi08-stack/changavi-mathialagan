@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Changavi Mathialagan</title>
-  <meta name="description" content="Y2K MySpace-style personal website for Changavi Mathialagan.">
-  <meta property="og:title" content="Changavi Mathialagan">
-  <meta property="og:description" content="Y2K MySpace-style personal website for Changavi Mathialagan.">
+  <title>Cavi’s Corner</title>
+  <meta name="description" content="Cavi’s Corner: a Y2K MySpace-style personal website.">
+  <meta property="og:title" content="Cavi’s Corner">
+  <meta property="og:description" content="Cavi’s Corner: a Y2K MySpace-style personal website.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -42,7 +42,7 @@
 
     <header class="landing-header">
       <!-- Landing page title text (Centred, clean without sparkles) -->
-      <p class="landing-title">Changavi Mathialagan</p>
+      <p class="landing-title">Cavi’s Corner</p>
     </header>
 
     <div class="landing-center">
@@ -52,7 +52,7 @@
         class="boombox-wrapper interactive-boombox"
         role="button"
         tabindex="0"
-        aria-label="Enter Changavi's website"
+        aria-label="Enter Cavi’s Corner"
       >
         <!-- BOOMBOX COVER PEEK: The Weepies - Say I Am You album cover -->
         <img 
@@ -84,6 +84,31 @@
        Revealed after the zoom transition. Initially inert and hidden from AT.
        ===================================================================== -->
   <main id="main-page" class="main-page" inert aria-hidden="true">
+
+    <!-- TOP SITE BAR: logo + navigation (CHANGE ME: edit the tagline or links here) -->
+    <header class="site-bar">
+      <div class="site-bar-top">
+        <a class="site-logo" href="index.html#home" aria-label="Cavi’s Corner, home">
+          <svg class="site-logo-icon" width="46" height="38" viewBox="0 0 46 38" aria-hidden="true">
+            <g fill="#ffffff" stroke="#ff4fc0" stroke-width="1.6">
+              <circle cx="10" cy="9" r="6.5"/>
+              <path d="M0 30c0-8 4-12 10-12s10 4 10 12z"/>
+              <circle cx="36" cy="9" r="6.5"/>
+              <path d="M26 30c0-8 4-12 10-12s10 4 10 12z"/>
+              <circle cx="23" cy="15" r="7.5"/>
+              <path d="M10 37c0-9 5-14 13-14s13 5 13 14z"/>
+            </g>
+          </svg>
+          <span class="site-logo-text">
+            <span class="site-logo-name">Cavi’s Corner</span>
+            <span class="site-logo-tag">a place for friends</span>
+          </span>
+        </a>
+      </div>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html#home" aria-current="page">Home</a><span class="site-nav-sep" aria-hidden="true">|</span><a href="photos.html">Cavi Clicks</a><span class="site-nav-sep" aria-hidden="true">|</span><a href="yaps.html">Cavi Chats</a><span class="site-nav-sep" aria-hidden="true">|</span><a href="codes.html">Cavi Codes</a>
+      </nav>
+    </header>
 
     <!-- -----------------------------------------------------------------
          LEFT COLUMN (Teal #00bbc3: Ways to Connect - Separate Boxes for LinkedIn, Strava, Letterboxd)
@@ -142,7 +167,37 @@
             </span>
             <span class="connect-card-label">Letterboxd</span>
           </a>
+
+          <!-- Box 4: Spotify -->
+          <a 
+            href="https://open.spotify.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="connect-card spotify-card"
+            aria-label="Spotify profile"
+          >
+            <span class="connect-card-icon spotify-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+                <path d="M4.5 8.2c5-1.5 10.3-1 15 1.6"/>
+                <path d="M5.5 12.4c4.2-1.1 8.4-.7 12.3 1.4"/>
+                <path d="M6.6 16.3c3.3-.8 6.5-.5 9.4 1.1"/>
+              </svg>
+            </span>
+            <span class="connect-card-label">Spotify</span>
+          </a>
         </div>
+      </div>
+
+      <!-- WHAT'S IN: list under Connect (CHANGE ME: edit the list items) -->
+      <div class="connect-container whatsin-container">
+        <div class="connect-title-box">
+          <span class="connect-title-text">WHAT’S IN:</span>
+        </div>
+        <ul class="whatsin-list">
+          <li>Going for walks</li>
+          <li>Helping others</li>
+          <li>Being nice to yourself</li>
+        </ul>
       </div>
     </aside>
 
@@ -153,10 +208,58 @@
       
       <!-- Top Primary Heading (Centred & Moved Down, Clean without glow/sparkles) -->
       <header class="main-header">
-        <h1 id="main-heading" class="main-title" tabindex="-1">Changavi Mathialagan</h1>
+        <h1 id="main-heading" class="main-title main-title-welcome" tabindex="-1">
+          <span class="title-line title-line-small">W<span class="pink-letter">e</span>l<span class="pink-letter">c</span>o<span class="pink-letter">m</span>e <span class="pink-letter">t</span>o</span>
+          <span class="title-line title-line-big"><span class="pink-letter">C</span>a<span class="pink-letter">v</span>i’<span class="pink-letter">s</span> C<span class="pink-letter">o</span>r<span class="pink-letter">n</span>e<span class="pink-letter">r</span></span>
+        </h1>
       </header>
 
-      <!-- 1. INTRO NOTEPAD (README.txt) WINDOW: Moved to top below name -->
+      <!-- 1. PROFILE BOX + INTRO NOTEPAD ROW: profile sits to the left of the Notepad window -->
+      <div class="profile-notepad-row">
+
+        <!-- PROFILE BOX (Windows 98 bevel style) -->
+        <aside class="profile-box" id="profile-box" aria-label="Profile">
+          <div class="profile-titlebar">
+            <span class="profile-title-text">Profile</span>
+          </div>
+
+          <div class="profile-body">
+            <!-- Profile image placeholder: CHANGE ME by swapping src (square image works best) -->
+            <div class="profile-photo-frame">
+              <img
+                class="profile-photo"
+                src="profile-photo.jpg"
+                alt="Changavi standing on a rocky overlook above a foggy forest, seen from behind"
+              >
+            </div>
+
+            <!-- Profile text fields: CHANGE ME -->
+            <dl class="profile-fields">
+              <div class="profile-field">
+                <dt>Name:</dt>
+                <dd>Changavi Mathialagan</dd>
+              </div>
+              <div class="profile-field">
+                <dt>Location:</dt>
+                <dd>GTA, Ontario</dd>
+              </div>
+              <div class="profile-field">
+                <dt>Favourite colour:</dt>
+                <dd>blue</dd>
+              </div>
+              <div class="profile-field">
+                <dt>Status:</dt>
+                <dd>serene</dd>
+              </div>
+              <div class="profile-field">
+                <dt>Find me:</dt>
+                <dd>running around</dd>
+              </div>
+            </dl>
+          </div>
+        </aside>
+
+        <!-- INTRO NOTEPAD (README.txt) WINDOW -->
       <article class="notepad-window" id="notepad-window" aria-label="About Me Notepad Window">
         <!-- Notepad Title Bar (Navy blue) -->
         <div class="notepad-titlebar">
@@ -224,6 +327,8 @@
           </footer>
         </div>
       </article>
+
+      </div><!-- /.profile-notepad-row -->
 
       <!-- 2. CD PLAYER & VERTICAL CD COLLECTION (Moved below Notepad, side-by-side) -->
       <div class="player-collection-row">
@@ -354,6 +459,90 @@
                 <span class="rack-status-badge">LOAD</span>
               </button>
             </li>
+
+            <!-- Album 9: Fleetwood Mac - Rumours -->
+            <li class="cd-rack-item" data-cover="fleetwood_mac_rumours.jpg" data-title="Fleetwood Mac – Rumours">
+              <button type="button" class="cd-rack-btn" aria-label="Load Fleetwood Mac - Rumours into CD player">
+                <img class="rack-cover" src="fleetwood_mac_rumours.jpeg" alt="Fleetwood Mac - Rumours">
+                <div class="rack-meta">
+                  <span class="rack-album-name">Fleetwood Mac</span>
+                  <span class="rack-album-sub">Rumours</span>
+                </div>
+                <span class="rack-status-badge">LOAD</span>
+              </button>
+            </li>
+
+            <!-- Album 10: TLC - CrazySexyCool -->
+            <li class="cd-rack-item" data-cover="tlc_crazysexycool.jpg" data-title="TLC – CrazySexyCool">
+              <button type="button" class="cd-rack-btn" aria-label="Load TLC - CrazySexyCool into CD player">
+                <img class="rack-cover" src="tlc_crazysexycool.png" alt="TLC - CrazySexyCool">
+                <div class="rack-meta">
+                  <span class="rack-album-name">TLC</span>
+                  <span class="rack-album-sub">CrazySexyCool</span>
+                </div>
+                <span class="rack-status-badge">LOAD</span>
+              </button>
+            </li>
+
+            <!-- Album 11: Ms. Lauryn Hill - The Miseducation of Lauryn Hill -->
+            <li class="cd-rack-item" data-cover="lauryn_hill_miseducation.jpg" data-title="Ms. Lauryn Hill – The Miseducation of Lauryn Hill">
+              <button type="button" class="cd-rack-btn" aria-label="Load Ms. Lauryn Hill - The Miseducation of Lauryn Hill into CD player">
+                <img class="rack-cover" src="lauryn_hill_miseducation.jpg" alt="Ms. Lauryn Hill - The Miseducation of Lauryn Hill">
+                <div class="rack-meta">
+                  <span class="rack-album-name">Ms. Lauryn Hill</span>
+                  <span class="rack-album-sub">The Miseducation of Lauryn Hill</span>
+                </div>
+                <span class="rack-status-badge">LOAD</span>
+              </button>
+            </li>
+
+            <!-- Album 12: It's a Musical - The Music Makes Me Sick -->
+            <li class="cd-rack-item" data-cover="its_a_musical_music_makes_me_sick.jpg" data-title="It’s a Musical – The Music Makes Me Sick">
+              <button type="button" class="cd-rack-btn" aria-label="Load It's a Musical - The Music Makes Me Sick into CD player">
+                <img class="rack-cover" src="its_a_musical_music_makes_me_sick.jpg" alt="It's a Musical - The Music Makes Me Sick">
+                <div class="rack-meta">
+                  <span class="rack-album-name">It’s a Musical</span>
+                  <span class="rack-album-sub">The Music Makes Me Sick</span>
+                </div>
+                <span class="rack-status-badge">LOAD</span>
+              </button>
+            </li>
+
+            <!-- Album 13: Taylor Swift - Midnights -->
+            <li class="cd-rack-item" data-cover="taylor_swift_midnights.jpg" data-title="Taylor Swift – Midnights">
+              <button type="button" class="cd-rack-btn" aria-label="Load Taylor Swift - Midnights into CD player">
+                <img class="rack-cover" src="taylor_swift_midnights.jpg" alt="Taylor Swift - Midnights">
+                <div class="rack-meta">
+                  <span class="rack-album-name">Taylor Swift</span>
+                  <span class="rack-album-sub">Midnights</span>
+                </div>
+                <span class="rack-status-badge">LOAD</span>
+              </button>
+            </li>
+
+            <!-- Album 14: Taylor Swift - folklore -->
+            <li class="cd-rack-item" data-cover="taylor_swift_folklore.jpg" data-title="Taylor Swift – folklore">
+              <button type="button" class="cd-rack-btn" aria-label="Load Taylor Swift - folklore into CD player">
+                <img class="rack-cover" src="taylor_swift_folklore.jpg" alt="Taylor Swift - folklore">
+                <div class="rack-meta">
+                  <span class="rack-album-name">Taylor Swift</span>
+                  <span class="rack-album-sub">folklore</span>
+                </div>
+                <span class="rack-status-badge">LOAD</span>
+              </button>
+            </li>
+
+            <!-- Album 15: Lana Del Rey - Born to Die -->
+            <li class="cd-rack-item" data-cover="lana_del_rey_born_to_die.jpg" data-title="Lana Del Rey – Born to Die">
+              <button type="button" class="cd-rack-btn" aria-label="Load Lana Del Rey - Born to Die into CD player">
+                <img class="rack-cover" src="lana_del_rey_born_to_die.jpg" alt="Lana Del Rey - Born to Die">
+                <div class="rack-meta">
+                  <span class="rack-album-name">Lana Del Rey</span>
+                  <span class="rack-album-sub">Born to Die</span>
+                </div>
+                <span class="rack-status-badge">LOAD</span>
+              </button>
+            </li>
           </ul>
         </aside>
       </div>
@@ -386,6 +575,18 @@
           <li class="top5-row">
             <div class="top5-item">Little Women (2019)</div>
           </li>
+        </ol>
+      </div>
+
+      <!-- Top 5 Albums -->
+      <div class="top5-container">
+        <h2 class="top5-title"><span class="title-sparkle" aria-hidden="true">★</span> Top 5 Albums <span class="title-sparkle" aria-hidden="true">★</span></h2>
+        <ol class="top5-list">
+          <li class="top5-row"><div class="top5-item">Say I Am You – The Weepies</div></li>
+          <li class="top5-row"><div class="top5-item">Cowboy Carter – Beyoncé</div></li>
+          <li class="top5-row"><div class="top5-item">Take Care – Drake</div></li>
+          <li class="top5-row"><div class="top5-item">Harry Styles – Harry Styles</div></li>
+          <li class="top5-row"><div class="top5-item">Midnights – Taylor Swift</div></li>
         </ol>
       </div>
     </aside>

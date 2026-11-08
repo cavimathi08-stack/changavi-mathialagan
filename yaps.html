@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cavi Chats – Cavi’s Corner</title>
+  <meta name="description" content="Always giving my two cents.">
+
+  <!-- External Font: Google Font "Festive" -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+
+  <!-- Same stylesheet as the home page -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TOP SITE BAR: logo + navigation (CHANGE ME: edit the tagline or links here) -->
+  <header class="site-bar">
+    <div class="site-bar-top">
+      <a class="site-logo" href="index.html#home" aria-label="Cavi’s Corner, home">
+        <svg class="site-logo-icon" width="46" height="38" viewBox="0 0 46 38" aria-hidden="true">
+          <g fill="#ffffff" stroke="#ff4fc0" stroke-width="1.6">
+            <circle cx="10" cy="9" r="6.5"/>
+            <path d="M0 30c0-8 4-12 10-12s10 4 10 12z"/>
+            <circle cx="36" cy="9" r="6.5"/>
+            <path d="M26 30c0-8 4-12 10-12s10 4 10 12z"/>
+            <circle cx="23" cy="15" r="7.5"/>
+            <path d="M10 37c0-9 5-14 13-14s13 5 13 14z"/>
+          </g>
+        </svg>
+        <span class="site-logo-text">
+          <span class="site-logo-name">Cavi’s Corner</span>
+          <span class="site-logo-tag">a place for friends</span>
+        </span>
+      </a>
+    </div>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html#home">Home</a><span class="site-nav-sep" aria-hidden="true">|</span><a href="photos.html">Cavi Clicks</a><span class="site-nav-sep" aria-hidden="true">|</span><a href="yaps.html" aria-current="page">Cavi Chats</a><span class="site-nav-sep" aria-hidden="true">|</span><a href="codes.html">Cavi Codes</a>
+    </nav>
+  </header>
+
+  <div class="sub-page">
+
+    <!-- Empty teal bar (matches the home page) -->
+    <aside class="sub-side" aria-hidden="true"></aside>
+
+    <!-- CENTRE: pieces I've written -->
+    <main class="sub-centre">
+      <header class="sub-header">
+        <h1 class="main-title">Cavi Chats</h1>
+        <p class="sub-subtitle">always giving my two cents</p>
+      </header>
+
+      <!-- Little table of contents: one link per piece (CHANGE ME: keep it in sync with the pieces below) -->
+      <nav class="yap-index" aria-label="Pieces">
+        <p class="yap-index-title">My documents</p>
+        <ul>
+          <li><a href="#yap-1">Title of Your First Piece</a></li>
+          <li><a href="#yap-2">Title of Your Second Piece</a></li>
+          <li><a href="#yap-3">Title of Your Third Piece</a></li>
+        </ul>
+      </nav>
+
+      <!-- =================================================================
+           HOW TO ADD A PIECE (CHANGE ME)
+           1. Copy one whole <li>...</li> block below (from "YAP 1" to its closing </li>).
+           2. Paste it at the top of the list (newest first) and give it a new number:
+              id="yap-4" and id="yap-4-title".
+           3. Edit the file name in the title bar, the title, the date, the tag and the text.
+           4. Add a matching link to the "My documents" list above:
+              <li><a href="#yap-4">Your new title</a></li>
+           ================================================================= -->
+      <ul class="yap-list">
+
+        <!-- YAP 1 -->
+        <li>
+          <article class="yap-window" id="yap-1" aria-labelledby="yap-1-title">
+            <div class="yap-titlebar" aria-hidden="true">
+              <span class="yap-titlebar-text">first-yap.txt – Notepad</span>
+              <span class="yap-titlebar-buttons">
+                <span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">×</span>
+              </span>
+            </div>
+            <div class="yap-body">
+              <div class="yap-text" tabindex="0" role="region" aria-label="Title of Your First Piece">
+                <h2 class="yap-title" id="yap-1-title">Title of Your First Piece</h2>
+                <p class="yap-meta">Month DD, YYYY · journal</p>
+                <p>Replace this with something you’ve written: a journal entry, a poem, a rant about your favourite album, a little story. Each paragraph goes in its own paragraph tag like this one.</p>
+                <p>Long pieces are fine. The text area scrolls on its own, so every piece stays the same size on the page.</p>
+              </div>
+            </div>
+            <p class="yap-status">journal</p>
+          </article>
+        </li>
+
+        <!-- YAP 2 -->
+        <li>
+          <article class="yap-window" id="yap-2" aria-labelledby="yap-2-title">
+            <div class="yap-titlebar" aria-hidden="true">
+              <span class="yap-titlebar-text">second-yap.txt – Notepad</span>
+              <span class="yap-titlebar-buttons">
+                <span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">×</span>
+              </span>
+            </div>
+            <div class="yap-body">
+              <div class="yap-text" tabindex="0" role="region" aria-label="Title of Your Second Piece">
+                <h2 class="yap-title" id="yap-2-title">Title of Your Second Piece</h2>
+                <p class="yap-meta">Month DD, YYYY · poem</p>
+                <p>line one of your poem<br>line two of your poem<br>line three of your poem</p>
+                <p>second stanza starts here<br>and keeps going<br>until you’re done</p>
+              </div>
+            </div>
+            <p class="yap-status">poem</p>
+          </article>
+        </li>
+
+        <!-- YAP 3 -->
+        <li>
+          <article class="yap-window" id="yap-3" aria-labelledby="yap-3-title">
+            <div class="yap-titlebar" aria-hidden="true">
+              <span class="yap-titlebar-text">third-yap.txt – Notepad</span>
+              <span class="yap-titlebar-buttons">
+                <span class="win-btn">_</span><span class="win-btn">□</span><span class="win-btn">×</span>
+              </span>
+            </div>
+            <div class="yap-body">
+              <div class="yap-text" tabindex="0" role="region" aria-label="Title of Your Third Piece">
+                <h2 class="yap-title" id="yap-3-title">Title of Your Third Piece</h2>
+                <p class="yap-meta">Month DD, YYYY · review</p>
+                <p>Write about a movie, an album, a trip, anything you want people to read. This is your corner of the internet, so yap as much as you like.</p>
+              </div>
+            </div>
+            <p class="yap-status">review</p>
+          </article>
+        </li>
+      </ul>
+    </main>
+
+    <!-- Empty teal bar (matches the home page) -->
+    <aside class="sub-side" aria-hidden="true"></aside>
+
+  </div>
+
+  <!-- Same script as home page (gives the glitter cursor trail; everything else is skipped here) -->
+  <script src="script.js"></script>
+</body>
+</html>

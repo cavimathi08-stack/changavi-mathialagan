@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cavi Codes – Cavi’s Corner</title>
+  <meta name="description" content="Some of my projects!">
+
+  <!-- External Font: Google Font "Festive" -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+
+  <!-- Same stylesheet as the home page -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TOP SITE BAR: logo + navigation (CHANGE ME: edit the tagline or links here) -->
+  <header class="site-bar">
+    <div class="site-bar-top">
+      <a class="site-logo" href="index.html#home" aria-label="Cavi’s Corner, home">
+        <svg class="site-logo-icon" width="46" height="38" viewBox="0 0 46 38" aria-hidden="true">
+          <g fill="#ffffff" stroke="#ff4fc0" stroke-width="1.6">
+            <circle cx="10" cy="9" r="6.5"/>
+            <path d="M0 30c0-8 4-12 10-12s10 4 10 12z"/>
+            <circle cx="36" cy="9" r="6.5"/>
+            <path d="M26 30c0-8 4-12 10-12s10 4 10 12z"/>
+            <circle cx="23" cy="15" r="7.5"/>
+            <path d="M10 37c0-9 5-14 13-14s13 5 13 14z"/>
+          </g>
+        </svg>
+        <span class="site-logo-text">
+          <span class="site-logo-name">Cavi’s Corner</span>
+          <span class="site-logo-tag">a place for friends</span>
+        </span>
+      </a>
+    </div>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html#home">Home</a><span class="site-nav-sep" aria-hidden="true">|</span><a href="photos.html">Cavi Clicks</a><span class="site-nav-sep" aria-hidden="true">|</span><a href="yaps.html">Cavi Chats</a><span class="site-nav-sep" aria-hidden="true">|</span><a href="codes.html" aria-current="page">Cavi Codes</a>
+    </nav>
+  </header>
+
+  <div class="sub-page">
+
+    <!-- Empty teal bar (matches the home page) -->
+    <aside class="sub-side" aria-hidden="true"></aside>
+
+    <!-- CENTRE: my projects -->
+    <main class="sub-centre">
+      <header class="sub-header">
+        <h1 class="main-title">Cavi Codes</h1>
+        <p class="sub-subtitle">some of my projects!</p>
+      </header>
+
+      <!-- =================================================================
+           HOW TO ADD A PROJECT (CHANGE ME)
+           1. Optional: put a screenshot in the same folder as this file (e.g. myproject.png).
+           2. Copy one whole <li class="travel-card">...</li> block below.
+           3. Replace the placeholder <div class="travel-photo travel-photo-empty">...</div>
+              with:  <img class="travel-photo" src="myproject.png" alt="Describe the screenshot">
+           4. Edit the file name in the title bar, the project name, the tech list and the description.
+           5. Point the "View project" link (href) at your project or GitHub repo.
+           Newest projects go at the top.
+           ================================================================= -->
+      <ul class="travel-grid">
+
+        <!-- PROJECT 1 -->
+        <li class="travel-card">
+          <div class="travel-card-titlebar">project-one.exe</div>
+          <div class="travel-card-body">
+            <figure class="travel-photo-frame">
+              <div class="travel-photo travel-photo-empty" role="img" aria-label="Screenshot placeholder">[ screenshot here ]</div>
+            </figure>
+            <div class="travel-card-text">
+              <h2 class="travel-place">Project Name</h2>
+              <p class="travel-date">HTML · CSS · JavaScript</p>
+              <p class="travel-caption">A sentence or two about what this project does and what you learned building it.</p>
+              <a class="code-link" href="https://github.com" target="_blank" rel="noopener noreferrer">View project »</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- PROJECT 2 -->
+        <li class="travel-card">
+          <div class="travel-card-titlebar">project-two.exe</div>
+          <div class="travel-card-body">
+            <figure class="travel-photo-frame">
+              <div class="travel-photo travel-photo-empty" role="img" aria-label="Screenshot placeholder">[ screenshot here ]</div>
+            </figure>
+            <div class="travel-card-text">
+              <h2 class="travel-place">Project Name</h2>
+              <p class="travel-date">HTML · CSS · JavaScript</p>
+              <p class="travel-caption">A sentence or two about what this project does and what you learned building it.</p>
+              <a class="code-link" href="https://github.com" target="_blank" rel="noopener noreferrer">View project »</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- PROJECT 3 -->
+        <li class="travel-card">
+          <div class="travel-card-titlebar">project-three.exe</div>
+          <div class="travel-card-body">
+            <figure class="travel-photo-frame">
+              <div class="travel-photo travel-photo-empty" role="img" aria-label="Screenshot placeholder">[ screenshot here ]</div>
+            </figure>
+            <div class="travel-card-text">
+              <h2 class="travel-place">Project Name</h2>
+              <p class="travel-date">HTML · CSS · JavaScript</p>
+              <p class="travel-caption">A sentence or two about what this project does and what you learned building it.</p>
+              <a class="code-link" href="https://github.com" target="_blank" rel="noopener noreferrer">View project »</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </main>
+
+    <!-- Empty teal bar (matches the home page) -->
+    <aside class="sub-side" aria-hidden="true"></aside>
+
+  </div>
+
+  <!-- Same script as home page (gives the glitter cursor trail; everything else is skipped here) -->
+  <script src="script.js"></script>
+</body>
+</html>
