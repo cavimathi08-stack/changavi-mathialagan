@@ -1848,11 +1848,6 @@ img.boombox-album-peek {
   .cd-track {
     scroll-behavior: auto !important;
   }
-} background-color: var(--col-win-grey);
-  border-top: 1px solid #ffffff;
-  border-left: 1px solid #ffffff;
-  border-right: 1px solid #404040;
-  border-bottom: 1px solid #404040;
 }
 
 /* Notepad Status Bar */
@@ -3847,13 +3842,6 @@ img.boombox-album-peek {
   .cd-track {
     scroll-behavior: auto !important;
   }
-}-height: 0;
-  background-color: var(--col-white);
-  /* Inset bevel (Dark top-left, Light bottom-right) */
-  border-top: 2px solid #808080;
-  border-left: 2px solid #808080;
-  border-right: 2px solid #ffffff;
-  border-bottom: 2px solid #ffffff;
 }
 
 /* Editable Text Area inside Notepad */
