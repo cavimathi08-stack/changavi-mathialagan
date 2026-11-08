@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Changavi Mathialagan</title>
+  <meta name="description" content="Y2K MySpace-style personal website for Changavi Mathialagan.">
+  <meta property="og:title" content="Changavi Mathialagan">
+  <meta property="og:description" content="Y2K MySpace-style personal website for Changavi Mathialagan.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- External Font: Google Font "Festive" (Only external resource allowed) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Festive&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =====================================================================
+       TRANSITION OVERLAY (Fades smoothly when entering the site)
+       ===================================================================== -->
+  <div id="transition-overlay" class="transition-overlay" aria-hidden="true"></div>
+
+  <!-- =====================================================================
+       PAGE 1: LANDING SCREEN
+       Draggable, spinnable boombox that zooms into the main site when clicked
+       ===================================================================== -->
+  <section id="landing-screen" class="landing-screen" aria-label="Landing screen">
+    <!-- Y2K Glitter Sparkles floating on Landing Screen -->
+    <div class="glitter-container" aria-hidden="true">
+      <span class="glitter-star glitter-1">✦</span>
+      <span class="glitter-star glitter-2">★</span>
+      <span class="glitter-star glitter-3">✧</span>
+      <span class="glitter-star glitter-4">✦</span>
+      <span class="glitter-star glitter-5">⋆</span>
+      <span class="glitter-star glitter-6">✧</span>
+    </div>
+
+    <header class="landing-header">
+      <!-- Landing page title text (Centred, clean without sparkles) -->
+      <p class="landing-title">Changavi Mathialagan</p>
+    </header>
+
+    <div class="landing-center">
+      <!-- Interactive Boombox Button Wrapper -->
+      <div 
+        id="landing-boombox-btn"
+        class="boombox-wrapper interactive-boombox"
+        role="button"
+        tabindex="0"
+        aria-label="Enter Changavi's website"
+      >
+        <!-- BOOMBOX COVER PEEK: The Weepies - Say I Am You album cover -->
+        <img 
+          class="boombox-album-peek" 
+          src="sayiamyoualbumcover.jpeg" 
+          alt="The Weepies - Say I Am You album cover" 
+          aria-hidden="true"
+        >
+
+        <!-- Boombox PNG image with transparent background -->
+        <img 
+          id="landing-boombox-img"
+          class="boombox-image"
+          src="7969-removebg-preview.png" 
+          alt="Silver retro portable CD boombox player with circular handle"
+          draggable="false"
+        >
+      </div>
+
+      <!-- Hint under boombox with subtle idle bob -->
+      <p id="landing-hint" class="landing-hint" aria-hidden="true">
+        ↑ click me! ✨
+      </p>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       PAGE 2: MAIN PAGE
+       Revealed after the zoom transition. Initially inert and hidden from AT.
+       ===================================================================== -->
+  <main id="main-page" class="main-page" inert aria-hidden="true">
+
+    <!-- -----------------------------------------------------------------
+         LEFT COLUMN (Teal #00bbc3: Ways to Connect - Separate Boxes for LinkedIn, Strava, Letterboxd)
+         ----------------------------------------------------------------- -->
+    <aside class="col-left" aria-label="Ways to connect">
+      <div class="connect-container">
+        <!-- Title Box -->
+        <div class="connect-title-box">
+          <span class="connect-title-text">CONNECT</span>
+        </div>
+
+        <!-- Separate Connect Boxes -->
+        <div class="connect-boxes-group">
+          <!-- Box 1: LinkedIn -->
+          <a 
+            href="https://www.linkedin.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="connect-card linkedin-card"
+            aria-label="LinkedIn profile"
+          >
+            <span class="connect-card-icon in-icon">in</span>
+            <span class="connect-card-label">LinkedIn</span>
+          </a>
+
+          <!-- Box 2: Strava -->
+          <a 
+            href="https://www.strava.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="connect-card strava-card"
+            aria-label="Strava profile"
+          >
+            <span class="connect-card-icon strava-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7.22 13.828h4.172"/>
+              </svg>
+            </span>
+            <span class="connect-card-label">Strava</span>
+          </a>
+
+          <!-- Box 3: Letterboxd -->
+          <a 
+            href="https://letterboxd.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="connect-card letterboxd-card"
+            aria-label="Letterboxd profile"
+          >
+            <span class="connect-card-icon letterboxd-icon">
+              <svg width="20" height="14" viewBox="0 0 24 16" fill="currentColor" aria-hidden="true">
+                <circle cx="5" cy="8" r="4.2" fill="#40bcf4"/>
+                <circle cx="12" cy="8" r="4.2" fill="#00e054"/>
+                <circle cx="19" cy="8" r="4.2" fill="#ff8000"/>
+              </svg>
+            </span>
+            <span class="connect-card-label">Letterboxd</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- -----------------------------------------------------------------
+         CENTRE COLUMN (Aqua zebra background, Name, Notepad at Top, CD Player & Vertical List)
+         ----------------------------------------------------------------- -->
+    <section class="col-centre" aria-label="Main content">
+      
+      <!-- Top Primary Heading (Centred & Moved Down, Clean without glow/sparkles) -->
+      <header class="main-header">
+        <h1 id="main-heading" class="main-title" tabindex="-1">Changavi Mathialagan</h1>
+      </header>
+
+      <!-- 1. INTRO NOTEPAD (README.txt) WINDOW: Moved to top below name -->
+      <article class="notepad-window" id="notepad-window" aria-label="About Me Notepad Window">
+        <!-- Notepad Title Bar (Navy blue) -->
+        <div class="notepad-titlebar">
+          <div class="notepad-title-left">
+            <span class="notepad-icon" aria-hidden="true">
+              <!-- Tiny 16x16 inline SVG icon of Windows Notepad -->
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="1" width="12" height="14" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+                <line x1="4" y1="4" x2="12" y2="4" stroke="#000080" stroke-width="1"/>
+                <line x1="4" y1="7" x2="12" y2="7" stroke="#808080" stroke-width="1"/>
+                <line x1="4" y1="10" x2="10" y2="10" stroke="#808080" stroke-width="1"/>
+                <rect x="9" y="8" width="5" height="2" fill="#c0c0c0" stroke="#000000" stroke-width="0.5" transform="rotate(-45 9 8)"/>
+              </svg>
+            </span>
+            <span class="notepad-title-text">README.txt – Notepad</span>
+          </div>
+          <div class="notepad-buttons">
+            <button 
+              type="button" 
+              id="btn-notepad-minimize" 
+              class="win-btn" 
+              aria-label="Minimize Notepad" 
+              aria-expanded="true"
+            >_</button>
+            <button 
+              type="button" 
+              id="btn-notepad-maximize" 
+              class="win-btn" 
+              aria-label="Maximize Notepad"
+            >□</button>
+            <button 
+              type="button" 
+              id="btn-notepad-close" 
+              class="win-btn" 
+              aria-label="Close Notepad"
+            >×</button>
+          </div>
+        </div>
+
+        <!-- Notepad Window Body -->
+        <div class="notepad-body" id="notepad-body">
+          <div class="notepad-content-wrapper">
+            <!-- CHANGE ME: Change your about me text here -->
+            <div 
+              id="notepad-textarea" 
+              class="notepad-textarea" 
+              contenteditable="true" 
+              role="textbox" 
+              aria-label="About me text"
+            >welcome to my corner of the web! my name is changavi and this is my little online haven. i built this page using plain html and notepad because modern social media is just way too crowded and commercialized now. here you will find what i am listening to on repeat, the cd albums that shaped my teenage years, and my all-time top five obsessions. feel free to look around, click on the cds, or even edit this text box right here if you want to leave a note before you close the tab. when i am not tweaking hex color codes or making mixtapes for my friends, you can probably find me scouring thrift shops for vintage silver tech, daydreaming about 2006, or organizing my shelf. thanks for stopping by my cyberspace profile! xo have fun exploring!</div>
+
+            <!-- Decorative Faux Windows Vertical Scrollbar -->
+            <div class="faux-scrollbar" aria-hidden="true">
+              <button type="button" class="scroll-arrow" tabindex="-1">▲</button>
+              <div class="scroll-track">
+                <div class="scroll-thumb"></div>
+              </div>
+              <button type="button" class="scroll-arrow" tabindex="-1">▼</button>
+            </div>
+          </div>
+
+          <!-- Inset Status Bar with Live Word Count -->
+          <footer class="notepad-statusbar">
+            <span id="notepad-status-text">137 words</span>
+          </footer>
+        </div>
+      </article>
+
+      <!-- 2. CD PLAYER & VERTICAL CD COLLECTION (Moved below Notepad, side-by-side) -->
+      <div class="player-collection-row">
+        <!-- Left: CD Player (Boombox) with Dynamic Loaded Album Peek -->
+        <div class="boombox-column">
+          <div class="boombox-wrapper static-boombox" aria-label="CD Player">
+            <!-- BOOMBOX COVER PEEK: Automatically replaced with whichever album you click in the rack -->
+            <img 
+              id="boombox-current-cover"
+              class="boombox-album-peek" 
+              src="sayiamyoualbumcover.jpeg" 
+              alt="Currently loaded in CD player: The Weepies - Say I Am You"
+            >
+            <img 
+              class="boombox-image" 
+              src="7969-removebg-preview.png" 
+              alt="Silver retro portable CD boombox player with circular handle"
+              draggable="false"
+            >
+          </div>
+          <!-- Retro Windows Status Pill for Currently Loaded Disc -->
+          <div class="player-now-playing-tag">
+            <span class="now-playing-label">DISC LOADED:</span>
+            <span id="current-disc-title" class="now-playing-title">The Weepies – Say I Am You</span>
+          </div>
+        </div>
+
+        <!-- Right: Vertical Album Collection Rack (Beside CD Player) -->
+        <aside class="vertical-cd-rack" aria-label="My CD Collection">
+          <div class="rack-header">
+            <h2 class="cd-title"><span class="title-sparkle" aria-hidden="true">✦</span> My CD Collection <span class="title-sparkle" aria-hidden="true">✦</span></h2>
+          </div>
+
+          <!-- Vertical list of albums -->
+          <ul class="vertical-cd-list" id="vertical-cd-list" role="list">
+            <!-- Album 1: The Weepies - Say I Am You -->
+            <li class="cd-rack-item is-loaded" data-cover="sayiamyoualbumcover.jpeg" data-title="The Weepies – Say I Am You">
+              <button type="button" class="cd-rack-btn" aria-label="Load The Weepies - Say I Am You into CD player">
+                <img class="rack-cover" src="sayiamyoualbumcover.jpeg" alt="The Weepies - Say I Am You">
+                <div class="rack-meta">
+                  <span class="rack-album-name">The Weepies</span>
+                  <span class="rack-album-sub">Say I Am You</span>
+                </div>
+                <span class="rack-status-badge">LOADED</span>
+              </button>
+            </li>
+
+            <!-- Album 2: Charli XCX - Brat -->
+            <li class="cd-rack-item" data-cover="brat_album_cover.png" data-title="Charli XCX – Brat">
+              <button type="button" class="cd-rack-btn" aria-label="Load Charli XCX - Brat into CD player">
+                <img class="rack-cover" src="brat_album_cover.png" alt="Charli XCX - Brat">
+                <div class="rack-meta">
+                  <span class="rack-album-name">Charli XCX</span>
+                  <span class="rack-album-sub">brat</span>
+                </div>
+                <span class="rack-status-badge">LOAD</span>
+              </button>
+            </li>
+
+            <!-- Album 3: Coldplay - Parachutes -->
+            <li class="cd-rack-item" data-cover="coldplay_parachutes_cover.jpeg" data-title="Coldplay – Parachutes">
+              <button type="button" class="cd-rack-btn" aria-label="Load Coldplay - Parachutes into CD player">
+                <img class="rack-cover" src="coldplay_parachutes_cover.jpeg" alt="Coldplay - Parachutes">
+                <div class="rack-meta">
+                  <span class="rack-album-name">Coldplay</span>
+                  <span class="rack-album-sub">Parachutes</span>
+                </div>
+                <span class="rack-status-badge">LOAD</span>
+              </button>
+            </li>
+
+            <!-- Album 4: Eagles - Hotel California -->
+            <li class="cd-rack-item" data-cover="eagles_album_cover.jpg" data-title="Eagles – Hotel California">
+              <button type="button" class="cd-rack-btn" aria-label="Load Eagles - Hotel California into CD player">
+                <img class="rack-cover" src="eagles_album_cover.jpg" alt="Eagles - Hotel California">
+                <div class="rack-meta">
+                  <span class="rack-album-name">Eagles</span>
+                  <span class="rack-album-sub">Hotel California</span>
+                </div>
+                <span class="rack-status-badge">LOAD</span>
+              </button>
+            </li>
+
+            <!-- Album 5: boygenius - the record -->
+            <li class="cd-rack-item" data-cover="the_record_boygenuis.webp" data-title="boygenius – the record">
+              <button type="button" class="cd-rack-btn" aria-label="Load boygenius - the record into CD player">
+                <img class="rack-cover" src="the_record_boygenuis.webp" alt="boygenius - the record">
+                <div class="rack-meta">
+                  <span class="rack-album-name">boygenius</span>
+                  <span class="rack-album-sub">the record</span>
+                </div>
+                <span class="rack-status-badge">LOAD</span>
+              </button>
+            </li>
+
+            <!-- Album 6: Phoebe Bridgers - Punisher -->
+            <li class="cd-rack-item" data-cover="punisher_phoebe.png" data-title="Phoebe Bridgers – Punisher">
+              <button type="button" class="cd-rack-btn" aria-label="Load Phoebe Bridgers - Punisher into CD player">
+                <img class="rack-cover" src="punisher_phoebe.png" alt="Phoebe Bridgers - Punisher">
+                <div class="rack-meta">
+                  <span class="rack-album-name">Phoebe Bridgers</span>
+                  <span class="rack-album-sub">Punisher</span>
+                </div>
+                <span class="rack-status-badge">LOAD</span>
+              </button>
+            </li>
+
+            <!-- Album 7: Norah Jones - Come Away With Me -->
+            <li class="cd-rack-item" data-cover="norah_jones_come_away_with_me.jpg" data-title="Norah Jones – Come Away With Me">
+              <button type="button" class="cd-rack-btn" aria-label="Load Norah Jones - Come Away With Me into CD player">
+                <img class="rack-cover" src="norah_jones_come_away_with_me.jpg" alt="Norah Jones - Come Away With Me">
+                <div class="rack-meta">
+                  <span class="rack-album-name">Norah Jones</span>
+                  <span class="rack-album-sub">Come Away With Me</span>
+                </div>
+                <span class="rack-status-badge">LOAD</span>
+              </button>
+            </li>
+
+            <!-- Album 8: Norah Jones - Sunrise (Feels Like Home) -->
+            <li class="cd-rack-item" data-cover="norah_jones_feels_like_home.jpeg" data-title="Norah Jones – Sunrise">
+              <button type="button" class="cd-rack-btn" aria-label="Load Norah Jones - Sunrise into CD player">
+                <img class="rack-cover" src="norah_jones_feels_like_home.jpeg" alt="Norah Jones - Feels Like Home">
+                <div class="rack-meta">
+                  <span class="rack-album-name">Norah Jones</span>
+                  <span class="rack-album-sub">Sunrise</span>
+                </div>
+                <span class="rack-status-badge">LOAD</span>
+              </button>
+            </li>
+          </ul>
+        </aside>
+      </div>
+
+      <!-- Bottom breathing space continuing the aqua zebra background -->
+      <div class="centre-bottom-spacer" aria-hidden="true"></div>
+    </section>
+
+    <!-- -----------------------------------------------------------------
+         RIGHT COLUMN (Teal #00bbc3 with Top 5 Movies)
+         ----------------------------------------------------------------- -->
+    <aside class="col-right" aria-label="Top 5 Movies sidebar">
+      <div class="top5-container">
+        <h2 class="top5-title"><span class="title-sparkle" aria-hidden="true">★</span> Top 5 Movies <span class="title-sparkle" aria-hidden="true">★</span></h2>
+
+        <!-- Ordered List 1 to 5 with Changavi's Top 5 Movies -->
+        <ol class="top5-list">
+          <li class="top5-row">
+            <div class="top5-item">Everything Everywhere All at Once</div>
+          </li>
+          <li class="top5-row">
+            <div class="top5-item">About Time</div>
+          </li>
+          <li class="top5-row">
+            <div class="top5-item">Eternal Sunshine of the Spotless Mind</div>
+          </li>
+          <li class="top5-row">
+            <div class="top5-item">Interstellar</div>
+          </li>
+          <li class="top5-row">
+            <div class="top5-item">Little Women (2019)</div>
+          </li>
+        </ol>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- Vanilla JavaScript Logic -->
+  <script src="script.js"></script>
+</body>
+</html>

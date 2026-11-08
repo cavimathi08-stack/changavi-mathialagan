@@ -1,0 +1,6 @@
+{
+  "name": "Changavi Mathialagan",
+  "description": "Y2K / MySpace-style personal website for Changavi Mathialagan with a draggable, spinnable boombox landing screen and retro profile.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
